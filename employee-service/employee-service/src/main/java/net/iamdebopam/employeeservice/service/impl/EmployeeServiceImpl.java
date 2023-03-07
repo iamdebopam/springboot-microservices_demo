@@ -38,7 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Optional<Employee> getEmployee=employeeRepository.findById(id);
         Employee employee=getEmployee.get();
 
-        //RestAPI call for DepartmentCode
+        //RestAPI call for DepartmentCode RESTTemplate
         ResponseEntity<DepartmentDto> responseEntity= restTemplate.getForEntity("http://localhost:8080/api/departments/" + employee.getDepartmentCode(),
                 DepartmentDto.class);
         DepartmentDto departmentDto=responseEntity.getBody();
