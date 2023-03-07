@@ -1,6 +1,7 @@
 package net.iamdebopam.employeeservice.controller;
 
 import lombok.AllArgsConstructor;
+import net.iamdebopam.employeeservice.dto.APIResponseDto;
 import net.iamdebopam.employeeservice.dto.EmployeeDto;
 import net.iamdebopam.employeeservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class EmployeeController {
         return new ResponseEntity<>(saveEmployeeDto, HttpStatus.CREATED);
     }
     @GetMapping("{id}")
-    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable("id") Long employeeId){
-        EmployeeDto getEmployeeDto=employeeService.getEmployeeById(employeeId);
-        return new ResponseEntity<>(getEmployeeDto,HttpStatus.OK);
+    public ResponseEntity<APIResponseDto> getEmployee(@PathVariable("id") Long employeeId){
+        APIResponseDto getApiResponseDto=employeeService.getEmployeeById(employeeId);
+        return new ResponseEntity<>(getApiResponseDto,HttpStatus.OK);
     }
 }

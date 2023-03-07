@@ -23,4 +23,5 @@ public class EmployeeDto {
     //@NotEmpty(message = "User Email should not be null or empty")
     //@Email(message = "Email Address should be Valid")
     private String email;
+    private  String departmentCode;
 }
